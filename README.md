@@ -22,6 +22,6 @@ Alternatively, parameters can be changed within the jasmine/spec/feedreader.js f
 
 ## Dependencies
 
-Browser support for HTML5, CSS3, and Javascript, including JQuery 2.1.1 and Jasmine 2.1.2
+Browser support for HTML5, CSS3, and Javascript, including ES6, JQuery 2.1.1, and Jasmine 2.1.2
 Access to fonts.googleapis.com to load the Roboto font
 
