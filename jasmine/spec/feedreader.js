@@ -63,7 +63,7 @@ $(() => {
 
         //Checks if the menu is hidden on initial load
         it('is hidden by default', () => {
-            expect($('body').attr('class')).toBe('menu-hidden');
+            expect($('body').hasClass('menu-hidden')).toBe(true);
         });
 
         // Checks that the initial load state for the menu is hidden
