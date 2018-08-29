@@ -37,8 +37,10 @@ $(() => {
 
         // Loops through the allFeeds array to parse out the individual feeds
         // Then calls the URL checking function for each
-        for(c = 0; c < allFeeds.length; c++) {
-            urlCheckLoop(allFeeds[c], c);
+        let urlCount = 0;
+        for(const feed of allFeeds) {
+            urlCheckLoop(feed, urlCount);
+            urlCount++;
         };
 
         // Individually tests for the name property of a single feed
@@ -51,9 +53,12 @@ $(() => {
 
         // Loops through the allFeeds array to parse out the individual feeds
         // Then calls the name checking function for each
-        for(c = 0; c < allFeeds.length; c++) {
-            nameCheckLoop(allFeeds[c], c);
+        let nameCount = 0;
+        for(const feed of allFeeds) {
+            nameCheckLoop(feed, nameCount);
+            nameCount++;
         };
+
     });
 
 
@@ -70,7 +75,6 @@ $(() => {
         // Then toggles the menu visible and checks it is visible
         // Finally toggles the menu back to hidden to ensure it returns to hidden
         it('toggles on click', () => {
-            expect($('body').hasClass('menu-hidden')).toBe(true);
             menuIcon.click();
             expect($('body').hasClass('menu-hidden')).toBe(false);
             menuIcon.click();
@@ -83,9 +87,7 @@ $(() => {
 
         // Ensures that the first feed is loaded before conducting the test
         beforeEach((done) => {
-            loadFeed(0, () => {
-                done();
-            });
+            loadFeed(0, done);
         });
 
         // Tests that more than 0 entries exist in the feed container
